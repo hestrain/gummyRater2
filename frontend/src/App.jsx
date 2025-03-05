@@ -1,66 +1,30 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import {getUser, getUsers, createUser, updateUser, deleteUser } from "./api.js"
-import "bootstrap/dist/css/bootstrap.min.css";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+import { Landing } from "./pages/Landing";
+import { Login } from "./pages/Login";
+import { NewRating } from "./pages/NewRating";
+import { Profile } from "./pages/Profile";
+import { Navbar } from "./components/Navbar";
+import { Layout } from "./components/Layout";
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  //Pages
-  //Landing Page
-  //Home Page (filtered by date)
-  //Profile Page
-  //Login
-  //New Rating
-  //About
-  //Contact
-
-  useEffect(() => {
-    async function loadAllUsers () {
-      let data = await getUsers()
-      if (data) {
-        setUsers(data)
-      }
-    }
-    loadAllUsers()
-  }, [])
-
-  function createNewUser() {
-    let userObject ={
-      userName: "CCCC",
-      email: "CCC@test.com",
-      password:"pass12345C"
-    }
-    createUser(userObject)
-  }
-
   return (
-    <div>
-      {JSON.stringify(users)}
-      <br/>
-      <button onClick={createNewUser}>
-        create user
-      </button>
-      {/* <h2>Table</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => {
-            return (<tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.password}</td>
-              </tr>)
-          })}
-        </tbody>
-      </table> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route element={<Layout />}>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/newRating" element={<NewRating />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

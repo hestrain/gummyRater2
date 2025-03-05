@@ -32,3 +32,31 @@ export async function deleteUser(id) {
     const response = await axios.delete(`${URL}/users/${id}`)
         return response
 }
+export async function getGummys() {
+    const response = await axios.get(`${URL}/gummy`)
+    if (response.status === 200) {
+        return response.data
+    } else {
+        return
+    }
+}
+export async function getGummy(id) {
+    const response = await axios.get(`${URL}/gummy/${id}`)
+    if (response.status === 200) {
+        return response.data
+    } else {
+        return
+    }
+}
+export async function createGummy(gummy) {
+    const response = await axios.post(`${URL}/gummy`, gummy)
+        return response
+}
+export async function updateGummy(id, gummy) {
+    const response = await axios.put(`${URL}/gummy/${id}`, gummy)
+        return response
+}
+export async function deleteGummy(id) {
+    const response = await axios.delete(`${URL}/gummy/${id}`)
+        return response
+}

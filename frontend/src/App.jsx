@@ -6,6 +6,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [users, setUsers] = useState([]);
 
+  //Pages
+  //Landing Page
+  //Home Page (filtered by date)
+  //Profile Page
+  //Login
+  //New Rating
+  //About
+  //Contact
+
   useEffect(() => {
     async function loadAllUsers () {
       let data = await getUsers()

@@ -19,13 +19,17 @@ export function Home() {
 
     return(
         <>
-        Home Page
+        All Your Gummys
+
+        <div className="gummys">
 
         {gummys.map((gummy) => {
             return (
 <GummyCard gummy={gummy}/>
             )
         })}
+        </div>
+
         </>
     )
 }

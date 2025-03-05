@@ -10,6 +10,7 @@ import { Profile } from "./pages/Profile";
 import { Navbar } from "./components/Navbar";
 import { Layout } from "./components/Layout";
 
+
 function App() {
   return (
     <Router>

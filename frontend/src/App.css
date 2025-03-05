@@ -1,61 +1,9 @@
-#root {
-  max-width: 1280px;
+body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-table {
-  border: 3px solid black;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead th {
-  border: 1px solid blue;
-  padding: 2px 8px;
-  background-color: seagreen;
-  color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #1B2A1B;
+  flex-direction: column;
 }
 
 .navbar {
@@ -77,18 +25,91 @@ tr:nth-child(even) {
 
 .gummys {
 display: flex;
-flex-direction: column;
-}
+flex-direction: row;
+flex-wrap: wrap;
+align-items:center ;
+justify-content: center;}
 
 .gummy{
 margin: 4px;
 padding: 10px;
 border: 3px green solid;
 border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-width: 300px;
+}
+
+.gummyTitle{
+  font-weight: 700;
+  font-size: x-large;
+}
+.gummyBrand {
+  font-weight: 300;
+  font-size: medium;
+  opacity: 70%;
+}
+.gummyRating {
+  font-weight: 800;
+  font-size: large;
+}
+.ratingWord {
+  font-weight: 300;
+  font-size: small;
+  opacity: 70%;
+
+}
+.score {
+  margin: 15px 0px;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 15px;
+  width: 50px;
+}
+
+.infoButton {
+  background-color: darkolivegreen;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 2px darkgreen ;
+  border-style: dotted;
+}
+
+.infoButton:hover{
+  background-color: lime;
+  color: black;
+  border-style: solid;
 }
 
 .gummy:hover{
   background-color: lightgreen;
-  color: seagreen;
+  color: darkblue;
   cursor: pointer;
+}
+
+/* i want this to be stuck to bottom but forget how rio */
+.date {
+  opacity: 50%;
+  font-size: small;
+}
+
+input {
+  color: black;
+  background-color: rgb(170, 248, 196);
+  margin: 10px;
+  padding: 5px;
+}
+textarea {
+  color: black;
+  background-color: rgb(170, 248, 196);
+  margin: 10px;
+  padding: 5px;
+}
+
+.formBox{
+  display: flex;
+  flex-direction: column;
+  width:max-content;
 }

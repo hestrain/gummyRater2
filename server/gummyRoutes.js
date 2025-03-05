@@ -44,6 +44,7 @@ gummyRoutes.route("/gummy/").post(async (req, res) => {
     weeknight: req.body.weeknight,
     cbd: req.body.cbd,
     thc: req.body.thc,
+    dateCreated: req.body.dateCreated
   };
   let data = await db.collection("gummy").insertOne(mongoObject);
   res.json(data);

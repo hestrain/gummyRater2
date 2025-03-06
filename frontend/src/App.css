@@ -3,25 +3,10 @@ body {
   padding: 2rem;
   text-align: center;
   background-color: #1B2A1B;
-  flex-direction: column;
+  display: block;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 50%;
-  left: 25%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navItem {
-  padding: 4px;
-  margin: 4px;
-  color: aquamarine;
-  border: solid green 2px;
-  border-radius: 7px;
-}
+/* gummy cards */
 
 .gummys {
 display: flex;
@@ -39,6 +24,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 min-width: 300px;
+max-width: 400px;
 }
 
 .gummyTitle{
@@ -65,7 +51,7 @@ min-width: 300px;
   padding: 5px;
   border: 2px solid;
   border-radius: 15px;
-  width: 50px;
+  width: 70px;
 }
 
 .infoButton {
@@ -89,27 +75,231 @@ min-width: 300px;
   cursor: pointer;
 }
 
-/* i want this to be stuck to bottom but forget how rio */
 .date {
   opacity: 50%;
   font-size: small;
 }
 
+/* gummy modals */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.score3 {
+  margin: 15px 5px;
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 15px;
+  width: 33%;
+}
+
+.ratings{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.mg {
+  margin: 0px 5px;
+  font-size: smaller;
+}
+
+.notes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.deleteButton{
+  font-size: x-small;
+}
+
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  top:0px;
+  position: relative;
+  height: 60px;
+  background-color: #a1c29f;
+}
+
+.navImg{
+  width: 50px;
+}
+
+/* navbar tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* new gummy form */
+
 input {
-  color: black;
-  background-color: rgb(170, 248, 196);
+  color: rgb(143, 212, 162);
   margin: 10px;
   padding: 5px;
+  background: none;
+  border: none;
+  border-bottom: #5cb85c solid 2px;
 }
 textarea {
-  color: black;
-  background-color: rgb(170, 248, 196);
+  color: rgb(143, 212, 162);
   margin: 10px;
   padding: 5px;
+  background: none;
+  border: none;
+  border-bottom: #5cb85c solid 2px;
+
+}
+label{
+  color: rgb(143, 212, 162);
+}
+.label-top{
+  text-align: left;
+margin-left: 10px;
+}
+
+.label-bottom{
+  text-align: center;
+  margin-top: 0;
 }
 
 .formBox{
   display: flex;
   flex-direction: column;
-  width:max-content;
+  justify-content: center;
+
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  
+}
+
+.addBtn{
+  width: 50%;
+  align-self: center;
+}
+
+.amounts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.inputNumber{
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.labelStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.formRatings{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px 2px 35px;
 }

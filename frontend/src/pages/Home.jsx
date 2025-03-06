@@ -1,35 +1,32 @@
-import { getGummys } from "../api"
-import { useState, useEffect } from "react"
-import { GummyCard } from "../components/GummyCard"
+import { getGummys } from "../api";
+import { useState, useEffect } from "react";
+import { GummyCard } from "../components/GummyCard";
 
 export function Home() {
+  const [gummys, setGummys] = useState([]);
 
-    const [gummys, setGummys] = useState([])
+  useEffect(() => {
+    async function loadAllGummys() {
+      const data = await getGummys();
+      data.sort(
+        (d1, d2) =>
+          new Date(d2.dateCreated).getTime() -
+          new Date(d1.dateCreated).getTime()
+      );
+      setGummys(data);
+    }
+    loadAllGummys();
+  }, []);
 
-    useEffect( () => {
+  return (
+    <>
+      <h1>Gummys</h1>
 
-        async function loadAllGummys(){
-            const data = await getGummys()
-            data.sort((d1, d2) => new Date(d2.dateCreated).getTime() - new Date(d1.dateCreated).getTime())
-            setGummys(data)
-            
-        }
-        loadAllGummys()
-    }, [])
-
-    return(
-        <>
-        All Your Gummys
-
-        <div className="gummys">
-
+      <div className="gummys">
         {gummys.map((gummy) => {
-            return (
-<GummyCard gummy={gummy}/>
-            )
+          return <GummyCard gummy={gummy} key={gummy.id} />;
         })}
-        </div>
-
-        </>
-    )
+      </div>
+    </>
+  );
 }

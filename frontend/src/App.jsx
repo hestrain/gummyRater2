@@ -15,14 +15,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Landing />} />
         <Route element={<Layout />}>
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Landing />} />
+          {/* <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} /> */}
           <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="/newRating" element={<NewRating />} />
-          <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/profile" element={<Profile />} /> */}
         </Route>
       </Routes>
     </Router>

@@ -81,8 +81,7 @@ gummyRoutes.route("/gummy/:id").delete(async (req, res) => {
   let data = await db
     .collection("gummy")
     .deleteOne({ _id: new ObjectId(req.params.id) })
-    .toArray();
-  res.json(data);
+    res.json(data);
 });
 
 

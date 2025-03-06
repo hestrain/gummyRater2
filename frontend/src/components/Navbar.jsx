@@ -9,7 +9,10 @@ export function Navbar() {
         x = +1;
         return (
           <Link to={page.path} key={x}>
-            <button>{page.linkName}</button>
+          <div className="tooltip">
+            <img className="navImg" src={page.image}></img>
+          <span className="tooltiptext">{page.linkName}</span>
+        </div>
           </Link>
         );
       })}

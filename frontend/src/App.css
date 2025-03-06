@@ -303,3 +303,11 @@ margin-left: 10px;
   flex-wrap: wrap;
   margin: 15px 2px 35px;
 }
+
+/* other */
+
+.navLayers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

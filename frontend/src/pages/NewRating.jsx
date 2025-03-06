@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createGummy } from "../api";
-import { Alert } from "bootstrap";
 
 export function NewRating() {
   const [userFormData, setUserFormData] = useState({

@@ -5,6 +5,8 @@ export function Navbar() {
   let x = 0;
   return (
     < div className ="navbar">
+
+
       {pageData.map((page) => {
         x = +1;
         return (

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { createGummy } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export function NewRating() {
+  const navigate = useNavigate
   const [userFormData, setUserFormData] = useState({
     brand: "",
     title: "",
@@ -39,7 +41,9 @@ export function NewRating() {
 
     await createGummy(newGummy);
     console.log("added to db");
-    alert(`Logged "${userFormData.title}", go to Home Page to see it`);
+    // navigate("/home")
+    window.location.replace("/home");
+    // alert(`Logged "${userFormData.title}", go to Home Page to see it`);
 
     setUserFormData({
       brand: "",
@@ -95,31 +99,48 @@ export function NewRating() {
             <input
               type="number"
               name="rating"
+              min="1"
+              max="10"
               value={userFormData.rating}
               onChange={handleInputChange}
-              className="inputField"
+              className="inputField inputNumber"
               required
             />
                    <label htmlFor="rating" className="label-bottom">Rating /10</label>
           </div>
-          <div className="labelStack">
-            <input
+          <div className="labelStack letterGrade">
+            {/* <input
               type="text"
               name="horn"
               value={userFormData.horn}
               onChange={handleInputChange}
               className="inputField"
               required
-            />
+            /> */}
+            <select id="horn" name="horn">
+              <option value="A+">A+</option>
+              <option value="A">A</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B">B</option>
+              <option value="B-">B-</option>
+              <option value="C+">C+</option>
+              <option value="C">C</option>
+              <option value="C-">C-</option>
+              <option value="D">D</option>
+              <option value="F">F</option>
+            </select>
                    <label htmlFor="horn" className="label-bottom">Horndog Grade</label>
           </div>
           <div className="labelStack">
             <input
               type="number"
               name="munchie"
+                            min="1"
+              max="10"
               value={userFormData.munchie}
               onChange={handleInputChange}
-              className="inputField"
+              className="inputField inputNumber"
               required
             />
                    <label htmlFor="munchie" className="label-bottom">Munchie Level /10</label>
@@ -185,6 +206,7 @@ export function NewRating() {
             <input
               type="number"
               name="cbd"
+              min="0"
               value={userFormData.cbd}
               onChange={handleInputChange}
               className="inputField inputNumber"
@@ -198,6 +220,7 @@ export function NewRating() {
             <input
               type="number"
               name="thc"
+              min="0"
               value={userFormData.thc}
               onChange={handleInputChange}
               className="inputField inputNumber"
@@ -207,6 +230,9 @@ export function NewRating() {
               THC (mg)
             </label>
           </div>
+          {/* <label htmlFor="photo">Select a photo:</label>
+          <input type="file" id="photo" name="photo" accept="image/*"/>
+          <div id="preview" className="preview"></div> */}
         </div>
         <button
           type="submit"

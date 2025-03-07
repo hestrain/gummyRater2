@@ -237,6 +237,15 @@ input {
   border: none;
   border-bottom: #5cb85c solid 2px;
 }
+select {
+  color: rgb(143, 212, 162);
+  margin: 10px 10px 0px 10px;
+  padding: 5px;
+  background: none;
+  border: none;
+  border-bottom: #5cb85c solid 2px;
+  font-size: x-large;
+}
 textarea {
   color: rgb(143, 212, 162);
   margin: 10px;
@@ -246,6 +255,7 @@ textarea {
   border-bottom: #5cb85c solid 2px;
 
 }
+
 label{
   color: rgb(143, 212, 162);
 }
@@ -289,11 +299,14 @@ margin-left: 10px;
 .inputNumber{
   align-self: center;
   margin-bottom: 0;
+  font-size: x-large;
 }
+
 
 .labelStack {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
 .formRatings{
@@ -311,3 +324,28 @@ margin-left: 10px;
   flex-direction: row;
   justify-content: space-between;
 }
+
+.tinyIcon{
+  width: 60px;
+  background-color: #a1c29f;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+
+.landingText{
+  font-size: 30px;
+  display: flex;
+  margin: 0px10px;
+}
+
+.landingOptions{
+  display: flex
+  ;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      margin-left: 10px;
+}
+

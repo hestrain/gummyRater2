@@ -40,7 +40,7 @@ export async function getGummys() {
     if (response.status === 200) {
         console.log("got data");
 
-        console.log(response);
+        // console.log(response);
         
         return response.data
     } else {
@@ -66,6 +66,7 @@ export async function updateGummy(id, gummy) {
 }
 export async function deleteGummy(id) {
     const response = await axios.delete(`${URL}/gummy/${id}`)
+
         return response
 }
 

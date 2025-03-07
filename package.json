@@ -4,7 +4,7 @@
     "description": "site to rate ur weed gummies",
     "main": "server/server.js",
     "scripts": {
-      "start": "node server/server.js",
+      "start": "concurrently \"cd server && npm start\" \"cd frontend && npm run dev\"",
       "develop": "concurrently \"cd server && npm run watch\" \"cd frontend && npm run dev\"",
       "install": "cd server && npm i && cd ../frontend && npm i",
       "seed": "cd server && npm run seed",

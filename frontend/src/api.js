@@ -33,11 +33,18 @@ export async function deleteUser(id) {
         return response
 }
 export async function getGummys() {
+    console.log("getting all gummys");
+    
     const response = await axios.get(`${URL}/gummy`)
     if (response.status === 200) {
+        console.log("got data");
+
+        console.log(response);
+        
         return response.data
     } else {
-        return
+        return console.error();
+        
     }
 }
 export async function getGummy(id) {

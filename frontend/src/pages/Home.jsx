@@ -8,11 +8,11 @@ export function Home() {
   useEffect(() => {
     async function loadAllGummys() {
       const data = await getGummys();
-      data.sort(
-        (d1, d2) =>
-          new Date(d2.dateCreated).getTime() -
-          new Date(d1.dateCreated).getTime()
-      );
+      // data.sort(
+      //   (d1, d2) =>
+      //     new Date(d2.dateCreated).getTime() -
+      //     new Date(d1.dateCreated).getTime()
+      // );
       setGummys(data);
     }
     loadAllGummys();

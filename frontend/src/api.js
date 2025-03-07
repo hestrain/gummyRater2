@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const URL = "http://localhost:3000"
+const URL = "http://localhost:3001"
 
 
 export async function getUsers() {

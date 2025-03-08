@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { createGummy } from "../api";
-import { useNavigate } from "react-router-dom";
 
 export function NewRating() {
-  const navigate = useNavigate
   const [userFormData, setUserFormData] = useState({
     brand: "",
     title: "",
@@ -118,6 +116,7 @@ export function NewRating() {
               required
             /> */}
             <select id="horn" name="horn">
+              <option value="-">-</option>
               <option value="A+">A+</option>
               <option value="A">A</option>
               <option value="A-">A-</option>

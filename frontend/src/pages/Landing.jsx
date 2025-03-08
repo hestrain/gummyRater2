@@ -1,15 +1,28 @@
 export function Landing() {
-    return(
-        <>
-        <h1>Welcome to the Gummy Rating Site</h1>
-        <div className="landingOptions">
 
-        <div className="landingText">Click </div><img className="tinyIcon" src="/cannabis-leaf-svgrepo-com.svg"></img> <div className="landingText">to see your Gummys, </div>
+    function home (){
+        window.location.replace("#/home");
+    }
+    function add (){
+        window.location.replace("#/newRating");
+    }
 
-        </div>
-        <div className="landingOptions">
-                    <div className="landingText">Click </div><img className="tinyIcon" src="/icons8-plus-button.svg"></img> <div className="landingText">to add more Gummys!</div>
-        </div>
-        </>
-    )
+  return (
+    <>
+      <h1>Welcome to the Gummy Rating Site</h1>
+      <div className="landingOptions">
+        <div className="landingText">Click </div>
+        <img onClick={home}
+          className="tinyIcon"
+          src="/cannabis-leaf-svgrepo-com.svg"
+        ></img>{" "}
+        <div className="landingText">to see your Gummys, </div>
+      </div>
+      <div className="landingOptions">
+        <div className="landingText">Click </div>
+        <img onClick={add} className="tinyIcon" src="/icons8-plus-button.svg"></img>{" "}
+        <div className="landingText">to add more Gummys!</div>
+      </div>
+    </>
+  );
 }

@@ -4,27 +4,27 @@
     "description": "site to rate ur weed gummies",
     "main": "server/server.js",
     "scripts": {
-      "start": "concurrently \"cd server && npm start\" \"cd frontend && npm run dev\"",
-      "develop": "concurrently \"cd server && npm run watch\" \"cd frontend && npm run dev\"",
-      "install": "cd server && npm i && cd ../frontend && npm i",
-      "seed": "cd server && npm run seed",
-      "build": "cd frontend && npm run build",
-      "render-build":"npm install && npm run build"
+        "start": "concurrently \"cd server && npm start\" \"cd frontend && npm run dev\"",
+        "develop": "concurrently \"cd server && npm run watch\" \"cd frontend && npm run dev\"",
+        "install": "cd server && npm i && cd ../frontend && npm i",
+        "seed": "cd server && npm run seed",
+        "build": "cd frontend && npm run build",
+        "render-build": "npm install && npm run build"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/hestrain/gummyRater2"
+        "type": "git",
+        "url": "git+https://github.com/hestrain/gummyRater2"
     },
     "author": "HeatherEllen Strain",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/jreeve65/gummyRater2/issues"
+        "url": "https://github.com/jreeve65/gummyRater2/issues"
     },
     "homepage": "https://github.com/jreeve65/gummyRater2#readme",
     "dependencies": {
-      "bcrypt": "^5.0.0",
-      "concurrently": "^8.2.0",
-      "dotenv": "^16.4.5"
+        "bcrypt": "^5.0.0",
+        "concurrently": "^8.2.0",
+        "dotenv": "^16.4.5",
+        "react-dom": "^19.0.0"
     }
-  }
-  
+}

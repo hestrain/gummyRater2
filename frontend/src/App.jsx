@@ -1,31 +1,17 @@
-import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { About } from "./pages/About";
-import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
-import { Landing } from "./pages/Landing";
-import { Login } from "./pages/Login";
-import { NewRating } from "./pages/NewRating";
-import { Profile } from "./pages/Profile";
-import { Navbar } from "./components/Navbar";
-import { Layout } from "./components/Layout";
-
+// Bringing in the required import from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
+import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
+  // The Outlet component will conditionally swap between the different pages according to the URL
   return (
-    <Router>
-      <Routes>
-        <Route element={<Layout />}>
-        <Route path="/" element={<Landing />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/newRating" element={<NewRating />} />
-          {/* <Route path="/profile" element={<Profile />} /> */}
-        </Route>
-      </Routes>
-    </Router>
+    <div className="content-container">
+      <NavBar />
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }
 

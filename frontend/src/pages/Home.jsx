@@ -52,7 +52,9 @@ export default function Home() {
 
   return (
     <>
+    <div className="center-header">
       <h1>Gummys</h1>
+    </div>
       <h3>You&apos;ve Logged {gummys.length} Gummys</h3>
       {/* sorting section */}
       {/* <p>You&apos;re currently sorting by {sort}</p>

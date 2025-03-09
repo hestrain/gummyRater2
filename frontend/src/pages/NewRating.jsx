@@ -85,7 +85,9 @@ export default function NewRating() {
     <div className="containerForm">
       {/* form */}
       <form className="formBox">
-        <h1 className="CQfont">Log New Gummy</h1>
+        <div className="center-header">
+          <h1>Rate New Gummy</h1>
+        </div>
         {/* gummy title */}
 
         <label htmlFor="title" className="label-top">
@@ -237,7 +239,6 @@ export default function NewRating() {
         />
         {/* contents of gummy section */}
         <div className="amounts">
-         
           {/* cbd amount */}
 
           <div className="labelStack">
@@ -254,7 +255,7 @@ export default function NewRating() {
               CBD (mg)
             </label>
           </div>
-         
+
           {/* thc amount */}
 
           <div className="labelStack">
@@ -271,17 +272,16 @@ export default function NewRating() {
               THC (mg)
             </label>
           </div>
-          
+
           {/* IN PROGRESS photo upload section */}
 
-         {/*} 
+          {/*} 
          <label htmlFor="photo">Select a photo:</label>
           <input type="file" id="photo" name="photo" accept="image/*" onChange={(e) =>fileUpload(e)} />
           <button type="photo-button" onClick={upload}>Upload</button>
           <div id="preview" className="preview"></div>
           */}
-        
-          </div> 
+        </div>
         {/* SUBMIT BUTTON!!! */}
 
         <button

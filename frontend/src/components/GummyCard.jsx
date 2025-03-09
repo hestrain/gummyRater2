@@ -117,12 +117,12 @@ export function GummyCard({ gummy }) {
                 <p className="bolded">Ok for a weeknight?</p><p>{gummy.weeknight}</p>
               </div>
             </div>
-            <div className="notes">
-              <div className="general-notes">
+            <div className="notes-section">
+              <div className="notes">
                 <h3>Notes</h3>
                 <div>{gummy.notes}</div>
               </div>
-              <div className="munchieNotes">
+              <div className="notes">
                 <h3>munchie Notes</h3>
                 <div>{gummy.munchNotes}</div>
               </div>

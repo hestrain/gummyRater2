@@ -29,7 +29,7 @@ body {
   width: 50px;
 }
 
-/* navbar tooltips */
+/* navbar tooltips (hover text for the image icons)*/
 .tooltip {
   position: relative;
   display: inline-block;
@@ -59,7 +59,7 @@ body {
 }
 
 /* -----gummy cards -----------------------*/
-
+/* div for all gummys to be dispolayed */
 .gummys {
 display: flex;
 flex-direction: row;
@@ -67,6 +67,7 @@ flex-wrap: wrap;
 align-items:center ;
 justify-content: center;}
 
+/* each individual gummy card */
 .gummy{
 margin: 4px;
 padding: 10px;
@@ -107,6 +108,7 @@ background-color: darkgreen;
   width: 70px;
 }
 
+/* more info button that opens the modal */
 .infoButton {
   background-color: rgb(20, 71, 36);
   color: white;
@@ -114,12 +116,19 @@ background-color: darkgreen;
   margin-top: 20px;
   border: 2px rgb(90, 222, 90) ;
   border-style: dotted;
+  font-weight: 300;
+}
+.date {
+  opacity: 50%;
+  font-size: small;
 }
 
+/* effects for the button and the whole card */
 .infoButton:hover{
   background-color: lime;
   color: black;
   border-style: solid;
+  font-weight: 700;
 }
 
 .gummy:hover{
@@ -128,10 +137,7 @@ background-color: darkgreen;
   cursor: pointer;
 }
 
-.date {
-  opacity: 50%;
-  font-size: small;
-}
+
 
 /* --------gummy modals ----------------------*/
 
@@ -206,30 +212,45 @@ background-color: darkgreen;
   color: white;
 }
 
+/* display for the 3 individual ratings */
 .score3 {
   margin: 15px 5px;
   padding: 5px;
-  border: 2px solid;
+  border: 5px solid;
   border-radius: 15px;
   width: 33%;
+  background-color: #a1c29f;
 }
 
+/* the whole rating section */
 .ratings{
   display: flex;
   flex-direction: row;
 }
 
-
+/* the amounts, displayed under the title + brand */
 .mg {
   margin: 0px 5px;
   font-size: smaller;
 }
 
+/* notes section */
 .notes{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 10px;
+}
+
+.felt{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.bolded {
+  font-weight: 700;
+  margin-right: 15px;
 }
 
 .deleteButton{
@@ -240,6 +261,21 @@ background-color: darkgreen;
 }
 
 /* -----------new gummy form ---------------*/
+/* the whole form */
+.formBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  
+}
 
 input {
   color: rgb(143, 212, 162);
@@ -249,6 +285,8 @@ input {
   border: none;
   border-bottom: #5cb85c solid 2px;
 }
+
+/* specific to the horn question */
 select {
   color: rgb(143, 212, 162);
   margin: 10px 10px 0px 10px;
@@ -271,36 +309,24 @@ textarea {
 label{
   color: rgb(143, 212, 162);
 }
+/* for top specific labels */
 .label-top{
   text-align: left;
 margin-left: 10px;
 }
-
+/* bottom labels */
 .label-bottom{
   text-align: center;
   margin-top: 0;
 }
 
-.formBox{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-.containerForm {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  
-}
-
+/* the submit button */
 .addBtn{
   width: 50%;
   align-self: center;
 }
 
+/* for the 2 final 1uestions */
 .amounts{
   display: flex;
   flex-direction: row;
@@ -309,19 +335,21 @@ margin-left: 10px;
   flex-wrap: wrap;
 }
 
+/*  for all number based qs */
 .inputNumber{
   align-self: center;
   margin-bottom: 0;
   font-size: x-large;
 }
 
-
+/* label stacked with question */
 .labelStack {
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
 
+/* the sections with the 3 ratings */
 .formRatings{
   display: flex;
   flex-direction: row;
@@ -329,6 +357,7 @@ margin-left: 10px;
   flex-wrap: wrap;
   margin: 15px 2px 35px;
 }
+
 
 /* -------------Landing Page--------- */
 /* -------------& Error Page--------- */
@@ -366,3 +395,12 @@ margin-left: 10px;
 
 
 /* -------------other--------- */
+.goodRating{
+border-color: #5cb85c;
+}
+.midRating{
+  border-color: orange;
+}
+.badRating{
+  border-color: red;
+}

@@ -43,11 +43,25 @@ export function GummyCard({ gummy }) {
     modal.style.display = "none";
   };
 
+  const colorCoded = (rating) => {
+    console.log(rating);
+    
+    if(rating > 8){
+      console.log("above 8");
+      const borderzclass = `score goodRating`
+      return (borderzclass)
+    } else if (rating <= 8 && rating > 4) {
+      return ("score midRating")
+    } else {
+      return ("score badRating")
+    }
+  }
+
   return (
-    <div key={gummy._id} className="gummy">
+    <div className="gummy">
       <div className="gummyTitle">{gummy.title}</div>
       <div className="gummyBrand">from {gummy.brand}</div>
-      <div className="score">
+      <div className={colorCoded(gummy.rating)}>
         <div className="gummyRating">{gummy.rating}/10</div>
         <div className="ratingWord">rating</div>
       </div>
@@ -66,7 +80,9 @@ export function GummyCard({ gummy }) {
       <div id={gummy._id} className="modal">
         {/* <!-- Modal content --> */}
         <div className="modal-content">
+          {/* Modal header */}
           <div className="modal-header">
+            {/* close button */}
             <span onClick={() => hideModal(gummy._id)} className="close">
               &times;
             </span>
@@ -76,8 +92,10 @@ export function GummyCard({ gummy }) {
               {gummy.thc}mg THC, {gummy.cbd}mg CBD
             </div>
           </div>
+          {/* modal body */}
           <div className="modal-body">
             <div className="ratings">
+              {/* the ratings */}
               <div className="score3">
                 <div className="gummyRating">{gummy.rating}/10</div>
                 <div className="ratingWord">overall rating</div>
@@ -91,17 +109,27 @@ export function GummyCard({ gummy }) {
                 <div className="ratingWord">munchie rating</div>
               </div>
             </div>
+          {/* other notes */}
+            <div className="other-stuff">
+              <div className="felt">
+                <p className="bolded">When did you feel it?</p><p> {gummy.felt}</p>
+              </div>
+              <div className="felt">
+
+                <p className="bolded">Ok for a weeknight?</p><p>{gummy.weeknight}</p>
+              </div>
+            </div>
             <div className="notes">
-              <div className="otherNotes">
-                <h3>General Notes</h3>
+              <div className="general-notes">
+                <h3>Notes</h3>
                 <div>{gummy.notes}</div>
               </div>
-              <div className="munchNotes">
-                <h3>Munchie Notes</h3>
+              <div className="munchieNotes">
+                <h3>munchie Notes</h3>
                 <div>{gummy.munchNotes}</div>
               </div>
             </div>
-          </div>
+            </div>
           <div className="modal-footer">
             <p className="date">Logged: {stringDate.slice(4, 15)}</p>
             <button
@@ -113,6 +141,6 @@ export function GummyCard({ gummy }) {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }

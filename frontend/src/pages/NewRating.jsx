@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createGummy } from "../api";
-import axios from "axios";
+// import axios from "axios";
 
 export default function NewRating() {
   const [userFormData, setUserFormData] = useState({
@@ -17,7 +17,8 @@ export default function NewRating() {
     cbd: "",
     thc: "",
   });
-  const [file, setFile] = useState();
+  //for the photo
+  // const [file, setFile] = useState();
 
   const handleAdd = async (event) => {
     event.preventDefault();
@@ -68,16 +69,17 @@ export default function NewRating() {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const fileUpload = (event) => {
-    setFile(event.target.files[0]);
-  };
+  //for the photo
+  // const fileUpload = (event) => {
+  //   setFile(event.target.files[0]);
+  // };
 
-  const upload = () => {
-    const formData = new FormData()
-    formData.append('file', file)
-    axios.post('http://localhost:3001/upload', formData)
-    .then(res => {}).catch(er => console.log(er))
-  }
+  // const upload = () => {
+  //   const formData = new FormData()
+  //   formData.append('file', file)
+  //   axios.post('http://localhost:3001/upload', formData)
+  //   .then(res => {}).catch(er => console.log(er))
+  // }
 
   return (
     <div className="containerForm">
@@ -272,12 +274,14 @@ export default function NewRating() {
           
           {/* IN PROGRESS photo upload section */}
 
-          <label htmlFor="photo">Select a photo:</label>
+         {/*} 
+         <label htmlFor="photo">Select a photo:</label>
           <input type="file" id="photo" name="photo" accept="image/*" onChange={(e) =>fileUpload(e)} />
           <button type="photo-button" onClick={upload}>Upload</button>
           <div id="preview" className="preview"></div>
-        </div>
+          */}
         
+          </div> 
         {/* SUBMIT BUTTON!!! */}
 
         <button

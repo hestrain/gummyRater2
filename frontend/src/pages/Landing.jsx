@@ -1,10 +1,10 @@
 export default function Landing() {
 
     function home (){
-        window.location.replace("#/home");
+        window.location.replace("/home");
     }
     function add (){
-        window.location.replace("#/newRating");
+        window.location.replace("/newRating");
     }
 
   return (

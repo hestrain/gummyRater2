@@ -7,6 +7,7 @@ export function GummyCard({ gummy }) {
   function Button({ onClick, children }) {
     return (
       <button
+        className="infoButton"
         onClick={(e) => {
           e.stopPropagation();
           onClick();
@@ -19,18 +20,15 @@ export function GummyCard({ gummy }) {
 
   const gummyDelete = async (id) => {
     console.log(`deleting ${id}`);
-    
+
     if (confirm("Are you sure you want to delete?")) {
+      await deleteGummy(id);
 
-        await deleteGummy(id);
-    
-        console.log(`delete success`);
-        window.location.reload(false);
-
-      } else {
-        console.log("cancelled delete");
-        
-      }
+      console.log(`delete success`);
+      window.location.reload(false);
+    } else {
+      console.log("cancelled delete");
+    }
   };
   const showModal = async (id) => {
     console.log(`getting modal for ${id}`);
@@ -60,7 +58,7 @@ export function GummyCard({ gummy }) {
       >
         More Info
       </Button>
-   
+
       <p className="date">{stringDate.slice(4, 15)}</p>
       {/* <!-- Trigger/Open The Modal --> */}
 
@@ -106,27 +104,15 @@ export function GummyCard({ gummy }) {
           </div>
           <div className="modal-footer">
             <p className="date">Logged: {stringDate.slice(4, 15)}</p>
-            <button className="deleteButton" onClick={() => gummyDelete(gummy._id)}>
-        delete
-      </button>
+            <button
+              className="deleteButton"
+              onClick={() => gummyDelete(gummy._id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
-
-      {/* <h1>{gummy.title}</h1>
-      <h2>{gummy.brand}</h2>
-      <p className="rating">{gummy.rating}/10</p>
-      <p className="content">
-        CBD: {gummy.cbd}mg THC: {gummy.thc}mg
-      </p>
-      <p>Horn: {gummy.horn}</p>
-      <p className="munch">
-        Munch: {gummy.munchie}
-        <br /> MunchNotes: {gummy.munchNotes}
-      </p>
-      <h3>Notes</h3>
-      <li>{gummy.notes}</li>
-      <p className="date">Logged: {stringDate.slice(4, 15)}</p> */}
     </div>
   );
 }

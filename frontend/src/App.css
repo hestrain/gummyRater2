@@ -6,6 +6,58 @@ body {
   display: block;
 }
 
+/* ------------navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  top:0px;
+  position: relative;
+  height: 60px;
+  background-color: #a1c29f;
+  
+}
+
+.navLayers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navImg{
+  width: 50px;
+}
+
+/* navbar tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /* -----gummy cards -----------------------*/
 
 .gummys {
@@ -18,7 +70,7 @@ justify-content: center;}
 .gummy{
 margin: 4px;
 padding: 10px;
-border: 3px green solid;
+border: 10px rgb(65, 173, 65) solid;
 border-radius: 10px;
 display: flex;
 flex-direction: column;
@@ -56,11 +108,11 @@ background-color: darkgreen;
 }
 
 .infoButton {
-  background-color: darkolivegreen;
+  background-color: rgb(20, 71, 36);
   color: white;
   border-radius: 5px;
   margin-top: 20px;
-  border: 2px darkgreen ;
+  border: 2px rgb(90, 222, 90) ;
   border-style: dotted;
 }
 
@@ -104,7 +156,8 @@ background-color: darkgreen;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  border: 10px rgb(5, 106, 5) solid;
+  border-radius: 15px;
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
@@ -181,57 +234,12 @@ background-color: darkgreen;
 
 .deleteButton{
   font-size: x-small;
-/* float: left; */
-
+  border: 2px rgb(230, 113, 113) ;
+  border-style: dotted;
+  background-color: #1B2A1B;
 }
 
-
-/* navbar */
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-  top:0px;
-  position: relative;
-  height: 60px;
-  background-color: #a1c29f;
-}
-
-.navImg{
-  width: 50px;
-}
-
-/* navbar tooltips */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  width: 120px;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-/* new gummy form */
+/* -----------new gummy form ---------------*/
 
 input {
   color: rgb(143, 212, 162);
@@ -322,13 +330,10 @@ margin-left: 10px;
   margin: 15px 2px 35px;
 }
 
-/* other */
+/* -------------Landing Page--------- */
+/* -------------& Error Page--------- */
 
-.navLayers{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 
 .tinyIcon{
   width: 60px;
@@ -358,3 +363,6 @@ margin-left: 10px;
   width: 100%;
   max-width: 500px;
 }
+
+
+/* -------------other--------- */

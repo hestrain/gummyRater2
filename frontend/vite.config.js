@@ -5,16 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  //all this added 730pm mar 6
-  // server: {
-  //   port: 3000,
-  //   open: true,
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://localhost:3001',
-  //       secure: false,
-  //       changeOrigin: true
-  //     }
-  //   }
-  // }
+  // all this added 730pm mar 6
+  server: {
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        secure: false,
+        changeOrigin: true
+      }
+    }
+  }
 })

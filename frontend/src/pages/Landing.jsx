@@ -9,7 +9,8 @@ export function Landing() {
 
   return (
     <>
-      <h1>Welcome to the Gummy Rating Site</h1>
+      {/* <h1>Welcome to the Gummy Rating Site</h1> */}
+      <img className="logo" src="/weedsite.png"></img>
       <div className="landingOptions">
         <div className="landingText">Click </div>
         <img onClick={home}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createGummy } from "../api";
 
-export function NewRating() {
+export default function NewRating() {
   const [userFormData, setUserFormData] = useState({
     brand: "",
     title: "",

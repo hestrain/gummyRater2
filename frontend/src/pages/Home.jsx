@@ -2,7 +2,7 @@ import { getGummys } from "../api";
 import { useState, useEffect } from "react";
 import { GummyCard } from "../components/GummyCard";
 
-export function Home() {
+export default function Home() {
   const [gummys, setGummys] = useState([]);
 
   useEffect(() => {

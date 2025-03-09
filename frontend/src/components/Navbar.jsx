@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { pageData } from "./pageData";
 
-export function Navbar() {
+export default function Navbar() {
   let x = 0;
   return (
     < div className ="navbar">

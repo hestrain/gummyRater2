@@ -10,7 +10,7 @@
 // )
 
 
-import ReactDom from 'react-dom/Client'
+import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: '/home',
         element: <Home />
-      }
+      },
       {
         path: '/newRating',
         element: <NewRating />

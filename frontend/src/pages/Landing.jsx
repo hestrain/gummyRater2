@@ -1,4 +1,4 @@
-export function Landing() {
+export default function Landing() {
 
     function home (){
         window.location.replace("#/home");

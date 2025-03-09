@@ -43,13 +43,11 @@ export function GummyCard({ gummy }) {
     modal.style.display = "none";
   };
 
+  //color code borders on ratings on non-modal cards
   const colorCoded = (rating) => {
-    console.log(rating);
     
     if(rating > 8){
-      console.log("above 8");
-      const borderzclass = `score goodRating`
-      return (borderzclass)
+      return (`score goodRating`)
     } else if (rating <= 8 && rating > 4) {
       return ("score midRating")
     } else {

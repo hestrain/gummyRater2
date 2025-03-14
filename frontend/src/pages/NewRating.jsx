@@ -42,8 +42,8 @@ export default function NewRating() {
 
     await createGummy(newGummy);
     console.log("added to db");
-    // navigate("/home")
-    window.location.replace("/home");
+    // navigate("/home") NOT WORKING 
+    window.location.replace("/");
     // alert(`Logged "${userFormData.title}", go to Home Page to see it`);
 
     setUserFormData({

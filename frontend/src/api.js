@@ -2,7 +2,7 @@ import axios from "axios";
 // const router = require('express').Router()
 
 
-let URL =  "http://localhost:4000";
+let URL =  "https://gummyrater2.onrender.com";
 
 
 // export async function getUsers() {

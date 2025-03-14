@@ -25,7 +25,7 @@ export function GummyCard({ gummy }) {
       await deleteGummy(id);
 
       console.log(`delete success`);
-      window.location.reload(false);
+      window.location.reload(true);
     } else {
       console.log("cancelled delete");
     }

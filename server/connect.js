@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb")
-const { collection } = require("./models/gummy.model")
+const { collection } = require("./models/Gummy")
 const { connect } = require("mongoose")
 require("dotenv").config({path:"./config.env"})
 const Db = process.env.ATLAS_URI

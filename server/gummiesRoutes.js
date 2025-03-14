@@ -3,12 +3,12 @@ const database = require("./connect");
 
 const ObjectId = require("mongodb").ObjectId;
 
-let gummyRoutes = express.Router();
+let gummiesRoutes = express.Router();
 
 //get all
-gummyRoutes.route("/gummy").get(async (req, res) => {
+gummiesRoutes.route("/gummies").get(async (req, res) => {
   let db = database.getDb();
-  let data = await db.collection("gummy").find({}).toArray();
+  let data = await db.collection("gummies").find({}).toArray();
   if (data.length > 0) {
     res.json(data);
   } else {
@@ -17,10 +17,10 @@ gummyRoutes.route("/gummy").get(async (req, res) => {
 });
 
 //get 1
-gummyRoutes.route("/gummy/:id").get(async (req, res) => {
+gummiesRoutes.route("/gummies/:id").get(async (req, res) => {
   let db = database.getDb();
   let data = await db
-    .collection("gummy")
+    .collection("gummies")
     .findOne({ _id: new ObjectId(req.params.id)})
   if (Object.keys(data).length > 0) {
     res.json(data);
@@ -29,7 +29,7 @@ gummyRoutes.route("/gummy/:id").get(async (req, res) => {
   }
 });
 //create
-gummyRoutes.route("/gummy/").post(async (req, res) => {
+gummiesRoutes.route("/gummies/").post(async (req, res) => {
   let db = database.getDb();
   let mongoObject = {
     brand: req.body.brand,
@@ -46,12 +46,12 @@ gummyRoutes.route("/gummy/").post(async (req, res) => {
     thc: req.body.thc,
     dateCreated: req.body.dateCreated
   };
-  let data = await db.collection("gummy").insertOne(mongoObject);
+  let data = await db.collection("gummies").insertOne(mongoObject);
   res.json(data);
 });
 
 //update
-gummyRoutes.route("/gummy/:id").post(async (req, res) => {
+gummiesRoutes.route("/gummies/:id").post(async (req, res) => {
   let db = database.getDb();
   let mongoObject = {
     $set: {
@@ -70,19 +70,19 @@ gummyRoutes.route("/gummy/:id").post(async (req, res) => {
     },
   };
   let data = await db
-    .collection("gummy")
+    .collection("gummies")
     .updateOne({ _id: new ObjectId(req, params.id) }, mongoObject);
   res.json(data);
 });
 
 //delete
-gummyRoutes.route("/gummy/:id").delete(async (req, res) => {
+gummiesRoutes.route("/gummies/:id").delete(async (req, res) => {
   let db = database.getDb();
   let data = await db
-    .collection("gummy")
+    .collection("gummies")
     .deleteOne({ _id: new ObjectId(req.params.id) })
     res.json(data);
 });
 
 
-module.exports = gummyRoutes
+module.exports = gummiesRoutes
